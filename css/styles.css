@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap");
+
+:root {
+  --accent: #ff4fd8;
+  --accent-alt: #00e0ff;
+  --bg: #0e0e11;
+  --bg-dim: #15151a;
+  --text: #e2e2e2;
+  --wave-speed: 15s; /* 가로 이동 속도 */
+}
+
+/* ===== Base ===== */
+html,
+body {
+  background: radial-gradient(circle at top left, var(--bg) 0%, #000 100%);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 6rem;
+}
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start;
+  padding: 4rem 0;
+}
+
+h1,
+h2,
+h3,
+nav .navbar-brand {
+  font-family: "Poppins", sans-serif;
+}
+.gradient-text {
+  background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-accent {
+  color: var(--accent);
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.4) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.navbar-nav .nav-link {
+  position: relative;
+  padding: 0.5rem 0.75rem;
+  color: var(--text) !important;
+  transition: color 0.2s;
+}
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 100%;
+}
+
+/* ===== Tiles ===== */
+.skill-tile {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  text-align: center;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.skill-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Project Cards ===== */
+.project-card {
+  position: relative;
+  background: var(--bg-dim);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+  cursor: pointer;
+  /* margin: 0.5rem; */
+  padding: 0.5rem;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.6);
+}
+.project-card.expanded .card-preview {
+  display: none;
+}
+
+/* Hover preview */
+.card-preview {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.project-card:hover .card-preview {
+  opacity: 1;
+}
+.card-preview i {
+  font-size: 3rem;
+  color: #fff;
+}
+
+/* Collapsible details */
+.project-details {
+  background: var(--bg-dim);
+  padding: 0.75rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: none;
+}
+.project-details.show {
+  display: block;
+}
+
+/* ===== Wave Line ===== */
+#wave-line {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  margin-top: -6px;
+  width: 200%;
+  height: 12px;
+  pointer-events: none;
+  z-index: 5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 24' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0%25' stop-color='%23ff4fd8'/%3E%3Cstop offset='100%25' stop-color='%2300e0ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0 12 C200 0 400 24 600 12 C800 0 1000 24 1200 12 C1400 0 1600 24 1600 24 V24 H0 Z' fill='url(%23grad)'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 1600px 24px;
+  opacity: 0.35;
+  animation: waveHoriz var(--wave-speed) linear infinite,
+    wavePulse 7s ease-in-out infinite;
+}
+@keyframes waveHoriz {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -1600px;
+  }
+}
+@keyframes wavePulse {
+  0% {
+    transform: scaleY(0.9);
+  }
+  15% {
+    transform: scaleY(1.4);
+  }
+  35% {
+    transform: scaleY(0.8);
+  }
+  55% {
+    transform: scaleY(1.3);
+  }
+  75% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.9);
+  }
+}
+
+/* ===== Footer ===== */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0.75rem 0;
+}
+
+/* 콘텐츠가 풋터 뒤에 가리지 않도록 */
+body {
+  padding-bottom: 4rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 991.98px) {
+  section {
+    padding: 3rem 0;
+  }
+}
+@media (max-width: 767.98px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .navbar-nav .nav-link {
+    padding: 0.75rem 1rem;
+  }
+  section {
+    padding: 2.5rem 0;
+  }
+  #wave-line {
+    height: 8px;
+    margin-top: -4px;
+    background-size: 1600px 16px;
+  }
+}

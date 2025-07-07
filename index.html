@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko" class="h-100">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio</title>
+
+    <!-- Fonts & Libraries -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body class="d-flex flex-column h-100">
+    <!-- 고정 웨이브 -->
+    <div id="wave-line"></div>
+
+    <!-- ===== Navigation ===== -->
+    <header class="shadow-sm fixed-top">
+      <nav class="navbar navbar-expand-lg container">
+        <a class="navbar-brand fw-bold text-light" href="#hero">Portfolio</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+          aria-controls="navMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ===== Hero ===== -->
+    <section
+      id="hero"
+      class="container px-3 d-flex flex-column justify-content-center align-items-center text-center"
+    >
+      <h1 class="display-4 fw-bold mb-3 gradient-text">
+        당신의 마음에 울림을<br />
+      </h1>
+      <p class="lead">
+        Built by the clarity of code, kept alive by the echo of emotion.
+      </p>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section id="about" class="container py-5">
+      <div class="row align-items-center g-4">
+        <div class="col-md-4 text-center">
+          <img
+            src="img/profile.PNG"
+            alt="Profile"
+            class="img-fluid rounded-4 shadow-lg"
+          />
+        </div>
+        <div class="col-md-8">
+          <h2 class="h3 mb-3 text-accent">About Me</h2>
+          <p>
+            저는 <strong>이상정</strong>입니다.<br />
+            현장에서 몸으로 익힌 기술과 감각을 바탕으로, 세상에 울림을 만드는
+            사람입니다.<br /><br />
+
+            <em>10년 동안</em> 영화와 드라마 현장에서 조명과 전기를 다루며
+            <strong>Film Lighting</strong>의 세계를 배웠고,<br />
+            웹과 AI의 시대에 발맞춰 <strong>HTML5</strong>,
+            <strong>CSS3</strong>, <strong>JavaScript</strong>와
+            <strong>AI Tools</strong>로<br />
+            창작의 도구를 넓혀가고 있습니다.<br /><br />
+
+            현재는 개발자로서 <strong>아메리카노 Market</strong>,
+            <strong>에어콘 Pay</strong>, <strong>물티슈 Talk</strong> 같은
+            프로덕트를 실습하며<br />
+            배우고 익힌 기술을 하나씩 구현하고 있습니다.<br /><br />
+
+            제가 꿈꾸는 건, 사람들의 마음에 <em>울림</em>을 남기는 것입니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Skills ===== -->
+    <section id="skills" class="py-5 bg-dim">
+      <div class="container">
+        <h2 class="h3 mb-4 text-center text-accent">Skills</h2>
+        <div class="row row-cols-2 row-cols-md-4 g-4">
+          <div class="col"><div class="skill-tile">HTML5</div></div>
+          <div class="col"><div class="skill-tile">CSS3 / Bootstrap</div></div>
+          <div class="col"><div class="skill-tile">JavaScript</div></div>
+          <div class="col"><div class="skill-tile">Git &amp; GitHub</div></div>
+          <div class="col"><div class="skill-tile">AI Tools</div></div>
+          <div class="col"><div class="skill-tile">Groove</div></div>
+          <div class="col"><div class="skill-tile">Music Production</div></div>
+          <div class="col"><div class="skill-tile">Film Lighting</div></div>
+          <div class="col"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section id="projects" class="container py-5">
+      <h2 class="h3 mb-4 text-center text-accent">Projects</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Live Products Card -->
+        <div class="col">
+          <div class="project-card expandable" data-target="productDetails">
+            <div class="card-preview"><i class="fas fa-rocket"></i></div>
+            <div class="card-body">
+              <h3 class="h5 card-title">Live Products</h3>
+              <p class="card-text">Currently operating platforms</p>
+            </div>
+            <div class="project-details" id="productDetails">
+              <ul class="list-group list-group-flush small">
+                <li class="list-group-item bg-transparent">
+                  <a href="#" class="text-white-50"> 아메리카노 Market </a>
+                </li>
+                <li class="list-group-item bg-transparent">
+                  <a href="#" class="text-white-50"> 에어콘 Pay </a>
+                </li>
+                <li class="list-group-item bg-transparent">
+                  <a href="#" class="text-white-50"> 물티슈 Talk </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filmography Card -->
+        <div class="col">
+          <div
+            class="project-card expandable"
+            data-target="filmDetails"
+            id="filmCard"
+          >
+            <div class="card-preview" id="filmPreview">
+              <i class="fas fa-film"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="h5 card-title">Filmography</h3>
+              <p class="card-text">Representative works (4)</p>
+            </div>
+            <div class="project-details" id="filmDetails">
+              <div class="row g-2">
+                <div
+                  class="col-6 text-center poster-item"
+                  data-poster="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNTAxMDhfMTcg%2FMDAxNzM2MzMyMjU5MDg3.kerSRyELaH2WfD5ylfEDJ5485eNQZpTpJlspsX4GMggg.pjhPBIIwR_Hhxn_uKCgpX8KDU6RFy5QbAKtkvaFXHKAg.JPEG%2FIMG_0435.jpeg&type=sc960_832"
+                >
+                  <img
+                    src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNTAxMDhfMTcg%2FMDAxNzM2MzMyMjU5MDg3.kerSRyELaH2WfD5ylfEDJ5485eNQZpTpJlspsX4GMggg.pjhPBIIwR_Hhxn_uKCgpX8KDU6RFy5QbAKtkvaFXHKAg.JPEG%2FIMG_0435.jpeg&type=sc960_832"
+                    class="img-fluid rounded mb-1"
+                    alt="소방관"
+                  />
+                  <small class="d-block text-white-50">소방관 (2024)</small>
+                </div>
+                <div
+                  class="col-6 text-center poster-item"
+                  data-poster="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMzBfMTU5%2FMDAxNjk4NjQxMDM3Mjkx.LzChfAdTmCThSezVBe77Bk-bc9eyO_sir7NZ20SBeeMg.2ZaKVZDfJlCHYfz2vdnA_P8o1Zro8MqG3-4Fb8lm080g.JPEG.9stars_kr%2Fabdc1446470a8ba7f68fab5a0b7c60f4.jpg&type=sc960_832"
+                >
+                  <img
+                    src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMzBfMTU5%2FMDAxNjk4NjQxMDM3Mjkx.LzChfAdTmCThSezVBe77Bk-bc9eyO_sir7NZ20SBeeMg.2ZaKVZDfJlCHYfz2vdnA_P8o1Zro8MqG3-4Fb8lm080g.JPEG.9stars_kr%2Fabdc1446470a8ba7f68fab5a0b7c60f4.jpg&type=sc960_832"
+                    class="img-fluid rounded mb-1"
+                    alt="비질란테"
+                  />
+                  <small class="d-block text-white-50">비질란테 (2023)</small>
+                </div>
+                <div
+                  class="col-6 text-center poster-item"
+                  data-poster="https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fmovie-phinf.pstatic.net%2F20221213_158%2F1670910727328mpqYu_JPEG%2Fmovie_image.jpg"
+                >
+                  <img
+                    src="https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fmovie-phinf.pstatic.net%2F20221213_158%2F1670910727328mpqYu_JPEG%2Fmovie_image.jpg"
+                    class="img-fluid rounded mb-1"
+                    alt="영웅"
+                  />
+                  <small class="d-block text-white-50">영웅 (2022)</small>
+                </div>
+                <div
+                  class="col-6 text-center poster-item"
+                  data-poster="https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F5181%2F2019%2F04%2F06%2F0001295847_001_20190406230004203.jpg&type=sc960_832"
+                >
+                  <img
+                    src="https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F5181%2F2019%2F04%2F06%2F0001295847_001_20190406230004203.jpg&type=sc960_832"
+                    class="img-fluid rounded mb-1"
+                    alt="7년의 밤"
+                  />
+                  <small class="d-block text-white-50">7년의 밤 (2018)</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Music Works Card -->
+        <div class="col">
+          <div class="project-card expandable" data-target="musicDetails">
+            <div class="card-preview"><i class="fas fa-music"></i></div>
+            <div class="card-body">
+              <h3 class="h5 card-title">Music Works</h3>
+              <p class="card-text">production highlights</p>
+            </div>
+            <div class="project-details" id="musicDetails">
+              <ul class="list-group list-group-flush small">
+                <!-- 1st. Single -->
+                <li class="list-group-item bg-transparent">
+                  <img
+                    src="https://image.fmkorea.com/files/attach/new/20200616/486263/1001659411/2948525188/a04dcac0d95eae9d45e1e4a7cc577b8e.jpg"
+                    alt="1st. Single cover"
+                    class="img-fluid rounded me-2"
+                    style="width: 60px; height: 60px; object-fit: cover"
+                  />
+                  <a href="#" class="text-white-50">
+                    <i class="fab fa-youtube me-1"></i>first Single (2026)
+                  </a>
+                </li>
+
+                <!-- 2nd. Single -->
+                <li class="list-group-item bg-transparent">
+                  <img
+                    src="https://image.fmkorea.com/files/attach/new/20200616/486263/1001659411/2948525188/99b983892094b5c6d2fc3736e15da7d1_2.jpg"
+                    alt="2nd. Single cover"
+                    class="img-fluid rounded me-2"
+                    style="width: 60px; height: 60px; object-fit: cover"
+                  />
+                  <a href="#" class="text-white-50">
+                    <i class="fab fa-youtube me-1"></i>2nd Single (2026)
+                  </a>
+                </li>
+
+                <!-- 1st. Album -->
+                <li class="list-group-item bg-transparent">
+                  <img
+                    src="https://image.fmkorea.com/files/attach/new/20200616/486263/1001659411/2948525188/d88f9b9ff8d2ce9396b416ae10cd0085.jpg"
+                    alt="1st. Album cover"
+                    class="img-fluid rounded me-2"
+                    style="width: 60px; height: 60px; object-fit: cover"
+                  />
+                  <a href="#" class="text-white-50">
+                    <i class="fab fa-youtube me-1"></i>1st. Album (2027)
+                  </a>
+                </li>
+
+                <!-- ..and more -->
+                <li class="list-group-item bg-transparent">
+                  <img
+                    src="data:image/jpeg;base64,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"
+                    alt="and more cover"
+                    class="img-fluid rounded me-2"
+                    style="width: 60px; height: 60px; object-fit: cover"
+                  />
+                  <a href="#" class="text-white-50">
+                    <i class="fab fa-youtube me-1"></i>..and more
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="py-5 bg-dim text-center">
+      <div class="container">
+        <h2 class="h3 mb-4 text-accent">Contact</h2>
+        <p class="mb-3">
+          세상과 연결되는 대화는 언제나 환영입니다.<br />
+          작업 문의, 협업 제안, 혹은 가벼운 인사라도 좋습니다.
+        </p>
+        <div class="d-flex justify-content-center gap-4 fs-4 mb-3">
+          <a
+            href="mailto:dukeduke112@gmail.com"
+            class="text-accent"
+            title="이메일"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="tel:+821053983103" class="text-accent" title="전화">
+            <i class="fas fa-phone"></i>
+          </a>
+          <a
+            href="https://instagram.com/edrian112"
+            target="_blank"
+            class="text-accent"
+            title="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <small class="text-white-50"
+          >dukeduke112@gmail.com / +82 10-5398-3103</small
+        >
+      </div>
+    </section>
+
+    <footer class="mt-auto py-3 text-center small">
+      © <span id="yearSpan"></span> 이상정. All rights reserved.
+    </footer>
+
+    <!-- JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      /* 연도 자동 */
+      document.getElementById("yearSpan").textContent =
+        new Date().getFullYear();
+
+      /* 카드 토글 */
+      document.querySelectorAll(".expandable").forEach((card) => {
+        card.addEventListener("click", (e) => {
+          if (e.target.closest(".project-details")) return;
+          card.classList.toggle("expanded");
+          document.getElementById(card.dataset.target).classList.toggle("show");
+        });
+      });
+
+      /* 포스터 프리뷰 */
+      const preview = document.getElementById("filmPreview");
+      document.querySelectorAll("#filmDetails .poster-item").forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+          preview.style.backgroundImage = `url(${item.dataset.poster})`;
+          preview.querySelector("i").style.opacity = "0";
+          preview.style.opacity = "1";
+        });
+        item.addEventListener("mouseleave", () => {
+          preview.style.backgroundImage = "";
+          preview.querySelector("i").style.opacity = "1";
+        });
+      });
+    </script>
+  </body>
+</html>
