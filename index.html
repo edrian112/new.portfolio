@@ -346,17 +346,29 @@
         });
       });
 
-      /* 포스터 프리뷰 */
+      /* Filmography 포스터 프리뷰 */
       const preview = document.getElementById("filmPreview");
+
+      // ✅ 초기 상태는 항상 투명하게
+      preview.style.opacity = "0";
+      preview.style.backgroundImage = "";
+      if (preview.querySelector("i")) {
+        preview.querySelector("i").style.opacity = "1";
+      }
+
+      // 포스터 아이템에 hover 이벤트 등록
       document.querySelectorAll("#filmDetails .poster-item").forEach((item) => {
         item.addEventListener("mouseenter", () => {
           preview.style.backgroundImage = `url(${item.dataset.poster})`;
-          preview.querySelector("i").style.opacity = "0";
+          if (preview.querySelector("i"))
+            preview.querySelector("i").style.opacity = "0";
           preview.style.opacity = "1";
         });
         item.addEventListener("mouseleave", () => {
           preview.style.backgroundImage = "";
-          preview.querySelector("i").style.opacity = "1";
+          if (preview.querySelector("i"))
+            preview.querySelector("i").style.opacity = "1";
+          preview.style.opacity = "0";
         });
       });
     </script>
